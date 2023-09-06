@@ -297,3 +297,9 @@ button, input, optgroup, select, textarea {
 .btn_l_c.active{
 	background: #eb2227 !important;
 }
+#notes_textarea{
+	width:100%;
+	background:#fff;
+	padding:5px 10px;
+	
+}

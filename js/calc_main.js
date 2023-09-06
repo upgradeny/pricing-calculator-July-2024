@@ -566,14 +566,24 @@ $(document).ready(function(){
 										'<h2>Result</h2>' +
 										'<br/>' +
 									'</div>';
-									
+				
+				let notes_textarea = jQuery("#notes_textarea").val();	
+				
+				let html_notes = '<div class="table_print_1">' +
+										'<h3>Notes</h3>' +
+										'<p>' +
+										notes_textarea +
+										'</p>' + 
+									'</div>';
+					
+				let print_notes =  notes_textarea.length > 0 ? html_notes : '';
 				
 				$('#editor').append(print_header);
 				$('#editor').append(print_project_info);
 				$('#editor').append(print_cost_table);								
 				$('#editor').append(print_input_data);
 				$('#editor').append(print_acessories_data);
-				
+				$('#editor').append(print_notes);
 				
 			});	
 			
