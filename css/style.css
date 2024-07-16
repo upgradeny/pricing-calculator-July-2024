@@ -286,7 +286,7 @@ button, input, optgroup, select, textarea {
     font-size: inherit;
     line-height: inherit;
 }
-.btn_l_c{
+.btn_l_c , .taxation_btn_l_c{
 	background: #231f20;
 	color:#fff;
 	border:0;
@@ -294,7 +294,7 @@ button, input, optgroup, select, textarea {
 	min-width:40px;
 	cursor:pointer;
 }
-.btn_l_c.active{
+.btn_l_c.active, .taxation_btn_l_c.active{
 	background: #eb2227 !important;
 }
 #notes_textarea{
