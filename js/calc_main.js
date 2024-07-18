@@ -140,7 +140,7 @@ $(document).ready(function(){
 						'</div>' +
 						'<div class="col-md-3">' + 
 							'<label>' +
-								'Price' +
+								'Cost' +
 							'</label>' +
 							'<div class="input_field_n_dollar">' +
 								'<span class="dollar_sign"> $ </span>' +
@@ -149,7 +149,7 @@ $(document).ready(function(){
 						'</div>' +
 						'<div class="select_field col-md-4 acessories_markup_main_units">' +
 							'<label>' +
-								'Select Markup' +
+								'Upcharge' +
 							'</label>' +
 							'<select class="acessories_markup_select" id="acessories_markup_select' + num1  + '" name ="acessories_markup_select' + num1  + '">' +
 								'<option name="" value="1.5"> 50%  </option>' +
