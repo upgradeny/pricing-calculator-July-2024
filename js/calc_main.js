@@ -24,6 +24,31 @@ $(document).ready(function(){
 				
 			}
 			
+			const auto_delivery_charges = [
+				{ minPrice: 0, maxPrice: 49.99, charge: 0 },
+				{ minPrice: 50, maxPrice: 499.99, charge: 75 },
+				{ minPrice: 500, maxPrice: 2999.99, charge: 150 },
+				{ minPrice: 3000, maxPrice: 6999.99, charge: 300 },
+				{ minPrice: 7000, maxPrice: 19999.99, charge: 500 },
+				{ minPrice: 20000, maxPrice: 39999.99, charge: 750 },
+				{ minPrice: 40000, maxPrice: 59999.99, charge: 1000 },
+				{ minPrice: 60000, maxPrice: 79999.99, charge: 1200 },
+				{ minPrice: 80000, maxPrice: 99999.99, charge: 1500 },
+				{ minPrice: 100000, maxPrice: Infinity, charge: 2000 }
+			];
+			
+			function calculateDeliveryFee(orderPrice) {
+				let fee = 0;
+				jQuery.each(auto_delivery_charges, function(index, range) {
+					if (orderPrice >= range.minPrice && orderPrice <= range.maxPrice) {
+						fee = range.charge;
+					}
+				});
+				return fee;
+			}
+	
+	
+			
 			var Alphabet_Array = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 			let newfield = '';
 			var priceFieldHtml = '<div class="row input_field">' + 
@@ -325,27 +350,13 @@ $(document).ready(function(){
 			});
 			
 			
-			// perform validation and calculations on click
+			var totalCost = 0;
+			
+			function price_calculator(ship_fee){
 				
-			jQuery( "#price_calc_btn" ).click(function( event ){
-
-				event.preventDefault();
-				
-				jQuery("#input_data_table_1, #input_data_table_2, #input_data_table_3, #input_data_table_4, #input_data_table_t_cost, #input_data_table_5,  .table_print_1, .br_line").remove();
-				
-				var validator = $( "#priceCalcForm" ).validate();
-					if( ! validator.form() ){
-						$('html, body').animate({
-							scrollTop: $("body").offset().top
-						}, 1000);
-						return;
-
-					} 
-
 				// defining variables and getting input values
 				
 				let price = 0;
-				let totalCost = 0;
 				let clientPrice = 0;
 				let listprice = 0;
 				let modificationprice = 0;
@@ -363,11 +374,16 @@ $(document).ready(function(){
 				
 				let discount =  jQuery('#discount').val() ? Number( $('#discount').val() )/100 : 0;
 				
-				let shipping =  jQuery('#shipping').val() ? Number( $('#shipping').val() ) : 0;
+				let shipping =  ship_fee;
+				
 				let surcharge =  jQuery('#surcharge').val() ? Number( $('#surcharge').val() ) : 0;
 				
 				let shipping_part =   Number( shipping ); // Number( shipping ) / jQuery('.list_price').length ;
 				
+				
+				
+		
+		
 				if( jQuery('.list_price').length > 1){
 					shipping_part =  Number( shipping ) / 2;
 				}
@@ -406,7 +422,7 @@ $(document).ready(function(){
 
 					modificationprice = 0;
 					price = Number( $(this).val() );
-					console.log(listprice);
+				//	console.log(listprice);
 					if( opt_l_c == "L" ){
 						listprice = listprice + price;
 						var LP_check = '$ ' + numberWithCommas( Number( $(this).val() ) );
@@ -420,10 +436,10 @@ $(document).ready(function(){
 
 					
 					price = Number( price_func_arr[0] );
-					console.log(price);
+					//console.log(price);
 					clientPrice +=  Number( price_func_arr[1] ) - Number( price_func_arr[1] ) * discount;
 					totalCost += price;
-					console.log(clientPrice);
+					//console.log(clientPrice);
 					
 					print_cost_table_sub +=  '<tr>' + 
 												'<td>' + $(this).parent().parent().parent().find('.description').val() + ' </td>' +
@@ -470,7 +486,7 @@ $(document).ready(function(){
 						var acessories_item_cost_price = round_2_digits(  Number( jQuery(this).val() ) );
 						var acessories_item_markup_value = Number( $(this).parent().parent().parent().find('.acessories_markup_select').val() );
 						var acessories_item_markup_price = round_2_digits(  Number( acessories_item_cost_price * acessories_item_markup_value ) );
-						console.log('acessories_item_cost_price' , acessories_item_cost_price , 'acessories_item_markup_value' , acessories_item_markup_value , 'acessories_item_markup_price',acessories_item_markup_price);
+						//console.log('acessories_item_cost_price' , acessories_item_cost_price , 'acessories_item_markup_value' , acessories_item_markup_value , 'acessories_item_markup_price',acessories_item_markup_price);
 						
 						totalCost += acessories_item_cost_price;
 						clientPrice += acessories_item_markup_price;
@@ -571,12 +587,16 @@ $(document).ready(function(){
 				
 				totalCost = round_2_digits( totalCost + Number(shipping) + Number ( modificationtotalPrice ) ); // + Number(surcharge);
 				
-				console.log("cost" , totalCost , taxation_btn_l_c);
+				
+				
+				
+				
+				//console.log("cost" , totalCost , taxation_btn_l_c);
 				
 				cost_w_tax = totalCost + taxation_btn_l_c * totalCost * 0.08375;
 				
-				console.log(taxation_btn_l_c , totalCost , '0.08375' , totalCost + taxation_btn_l_c * totalCost * 0.08375 , cost_w_tax);
-				console.log("total cost" , cost_w_tax);
+				//console.log(taxation_btn_l_c , totalCost , '0.08375' , totalCost + taxation_btn_l_c * totalCost * 0.08375 , cost_w_tax);
+				//console.log("total cost" , cost_w_tax);
 				
 				clientPrice = round_2_digits( clientPrice + Number(shipping) + Number ( modificationtotalPrice ) ); // + Number(surcharge);
 				
@@ -638,6 +658,61 @@ $(document).ready(function(){
 				$('#editor').append(print_input_data);
 				$('#editor').append(print_acessories_data);
 				$('#editor').append(print_notes);
+				
+			}
+			
+			
+			// perform validation and calculations on click
+				
+			jQuery( "#price_calc_btn" ).click(function( event ){
+
+				event.preventDefault();
+				
+				jQuery("#input_data_table_1, #input_data_table_2, #input_data_table_3, #input_data_table_4, #input_data_table_t_cost, #input_data_table_5,  .table_print_1, .br_line").remove();
+				
+				var validator = $( "#priceCalcForm" ).validate();
+					if( ! validator.form() ){
+						$('html, body').animate({
+							scrollTop: $("body").offset().top
+						}, 1000);
+						return;
+
+					}
+					
+					totalCost = 0;
+					
+					var ship_v = 0;
+					var ship_fee = 0;
+					let shippingValue = jQuery('#shipping').val().trim();  // Get value and remove any extra spaces
+					if (shippingValue === "") {
+						price_calculator(0);
+						jQuery("#input_data_table_1, #input_data_table_2, #input_data_table_3, #input_data_table_4, #input_data_table_t_cost, #input_data_table_5,  .table_print_1, .br_line").remove();
+						ship_v = 0;
+						console.log('totalCost => ' , totalCost)
+						ship_fee = calculateDeliveryFee(totalCost);
+						console.log('ship_fee => ' , ship_fee)
+						price_calculator(ship_fee);
+						totalCost = totalCost + ship_fee;
+						console.log("Shipping field is empty => " , ship_v);
+						// You can perform actions here if the field is empty
+					} else {
+						ship_v = 1;
+						ship_fee =  jQuery('#shipping').val() ? Number( $('#shipping').val() ) : 0;
+						price_calculator(ship_fee);
+						console.log("Shipping field is not empty  => " , ship_v);
+						// You can perform actions here if the field is not empty
+					}
+
+
+					
+					
+					
+					
+					
+					
+				
+
+				
 				
 			});	
 			
