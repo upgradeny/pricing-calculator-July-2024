@@ -679,7 +679,7 @@ $(document).ready(function(){
 
 					}
 					
-					totalCost = 0;
+					
 					
 					var ship_v = 0;
 					var ship_fee = 0;
@@ -691,6 +691,7 @@ $(document).ready(function(){
 						console.log('totalCost => ' , totalCost)
 						ship_fee = calculateDeliveryFee(totalCost);
 						console.log('ship_fee => ' , ship_fee)
+						totalCost = 0;
 						price_calculator(ship_fee);
 						totalCost = totalCost + ship_fee;
 						console.log("Shipping field is empty => " , ship_v);
