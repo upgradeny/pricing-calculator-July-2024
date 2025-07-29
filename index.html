@@ -5,6 +5,8 @@
 	 <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/print.min.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+	<link href="fonts/Ysabeau-VariableFont_wght.ttf" rel="stylesheet">
     <!-- Main CSS -->
 	<link rel="stylesheet" href="css/style.css">
 	<style>
@@ -30,176 +32,273 @@
 		<div class="row price_container">
 
 			<form id="priceCalcForm">
-			
-				<div class="row input_field">
-					<div class="col-md-6">
-						<label>
-							Deal Owner
-						</label>
-						<div class="">
-							<input type="text" id="main_name" class="number_req form-control main_name" name ="main_name" value=""/>
-						</div>	
-					</div>
-					<div class="col-md-6">
-						<label>
-							Project Name
-						</label>
-						<div class="">
-							<input type="text" id="project_name" class="number_req form-control project_name" name ="project_name" value=""/>
-						</div>	
-					</div>
+				<br/>
+				<div class="col-sm-12 no_padding " id="cabinet_info_heading_div">
+					<h2 class="text-left inline_block text_upper">Project Information</h2>
 				</div>
-				
 				<div class="row input_field">
-				
-					<div class="select_field col-md-8 main_units">
-						<label>
-							Vendor
-						</label>
-						<select id="main_unit" name ="main_unit" required="required">
-							<option name="" value="">Please Select Vendor</option>
-							<option name="Adornus" value="0.34" data-upcharge="215" data-surcharge="1"> Adornus </option>
-							<option name="Bernier" value="0.51" data-upcharge="210" data-surcharge="1"> Bernier Cabinet </option>
-							<option name="Luxor" value="0.382" data-upcharge="210" data-surcharge="1"> Luxor Cabinetry </option>
-							<option name="CNC" value="0.25" data-upcharge="215" data-surcharge="1" > CNC Cabinetry </option>
-							<option name="CNG" value="0.34" data-upcharge="215" data-surcharge="1"> CNG Cabinets </option>
-							<option name="cubitac" value="0.2688" data-upcharge="215" data-surcharge="1"> Cubitac Cabinet </option>
-							<option name="cubitac_basic" value="0.2592" data-upcharge="215" data-surcharge="1"> Cubitac Basic </option>
-							<option name="DC" value="0.476" data-upcharge="210" data-surcharge="1.009"> DC Cabinetry </option>
-							<option name="Executive" value="0.552" data-upcharge="210" data-surcharge="1.009"> Executive Cabinets </option>
-							<option name="Fabuwood" value="0.349" data-upcharge="215" data-surcharge="1"> Fabuwood </option>														
-							<option name="HansKrug" value="1.0" data-upcharge="210" data-surcharge="1"> Hans Krug </option>
-							<option name="TeddWood_lm_ll" value="0.552" data-upcharge="210" data-surcharge="1.009"> TeddWood  (LM & LL) </option>
-							<option name="TeddWood_custom" value="0.459" data-upcharge="210" data-surcharge="1.009"> TeddWood  (Custom) </option>
-							<option name="Cuisine_ideale" value="0.4" data-upcharge="210" data-surcharge="1"> Cuisine Ideale </option>
+					<div class="col-md-6 project_info">
+						<div class="flex_row">
+							<label>
+								Project
+							</label>
+							<div class="">
+								<input type="text" id="project_name" class="number_req form-control project_name" name ="project_name" value=""/>
+							</div>
+						</div>
+						<div class="flex_row">
+							<label>
+								Name
+							</label>
+							<div class="">
+								<input type="text" id="main_name" list="list_box_style" class="number_req form-control main_name" name ="main_name" value=""/>
+								<datalist id="list_box_style">
+									<option>Faigy</option>
+									<option>Rivka</option>
+									<option>Aliza</option>
+									<option>Gladys</option>
+								</datalist>
+							</div>	
+						</div>	
 
-						</select>
+						<div class="flex_row">
+							<label>
+								Floor Plan #
+							</label>
+							<div class="">
+								<input type="text" id="floor_plan" class="number_req form-control floor_plan" name ="floor_plan" value=""/>
+							</div>
+						</div>
+						
+						
 					</div>
-					
-					<div class="col-md-3">
+					<div class="col-md-6 project_info">
 							
+						<div class="flex_row">
+							<label>
+								Shipping
+							</label>
+							<div class="input_field_n_dollar">
+								<span class="dollar_sign"> $ </span>
+								<input type="text" id="shipping" class="number_req form-control" name ="shipping" value=""/>
+							</div>	
+						</div>
+					
+						<div class="select_field main_units flex_row">
+							<label>
+								Client Scale
+							</label>
+							<div class="">
+								<select id="discount" name ="discount">
+									<option name="" value="0">0</option>
+									<option name="" value="5"> 1 </option>
+									<option name="" value="10"> 2 </option>
+									<option name="" value="15"> 3 </option>
+									<option name="" value="20"> 4 </option>
+									<option name="" value="25"> 5 </option>
+								</select>
+							</div>							
+						</div>
+						
+						<div class="flex_row taxable_div">
+							<div class="col-sm-4 no_padding">
 							<label>
 								Taxable<span class="red"> * </span>
 							</label>
-							<div class="flex_subdiv">
-								<label class="btn btn-secondary taxation_btn_l_c" for="option1" >
-									<input type="radio" class="btn-check list_price_option" name="taxation_options" autocomplete="off" value="1" required="required"/>
+							</div>
+							<div class="flex_subdiv col-sm-5 no_padding">
+								<label class="btn btn-secondary taxation_btn_l_c active" for="option1" >
+									<input type="radio" class="btn-check list_price_option" name="taxation_options" autocomplete="off" value="1" required="required" checked="checked"/>
 									Yes
 								</label>
-								<label class="btn btn-secondary taxation_btn_l_c disabled active" for="option0" onclick="">
-									<input type="radio" class="btn-check list_price_option neutral" name="taxation_options0" autocomplete="off" value="0" disabled="disabled" checked="checked"/>
-								</label>
-							   <label class="btn btn-secondary taxation_btn_l_c " for="option2">
+								
+							   	<label class="btn btn-secondary taxation_btn_l_c " for="option2">
 									<input type="radio" class="btn-check list_price_option" name="taxation_options" autocomplete="off" value="0" required="required" />
 									NO
 								</label>
 
-							
 							</div>
-							
+
+						</div>
+						
+						
+					</div>
+					
+					
+					
+				
+				</div>
+	<br/>
+				<div class="col-sm-12 no_padding clickable_heading" id="cabinet_info_heading_div">
+					<h2 class="text-left inline_block text_upper">Cabinet Information</h2>
+				</div>	
+				
+				<div class="row_headings">
+					<div class="row input_field price_fields">
+						<div class="col-md-3">
+							<label>
+								Group A
+							</label>
 							
 						</div>
 						
+						<div class="col-md-4">
+							<div class="select_field main_units">
+								<label>
+									Vendor
+								</label>
+								
+							</div>
+						</div>
+						
+						
+						
+						
+						<div class="col-md-2">
+							<label>
+								Price<span class="red"> * </span>
+							</label>
+							
+						</div>
+						
+						<div class="col-md-2">
+							
+							<label>
+								&nbsp;
+							</label>
+							
+						</div>
+							
+						
+						<div class="col-md-1"><label>&nbsp;</label></div>
+					</div>
 				</div>
 				
 				<div id="list_prices">
 					<div class="row input_field price_fields">
-						<div class="col-md-5">
-							<label>
-								Group A
-							</label>
+						<div class="col-md-3">
+							
 							<div class="input_field_n_dollar">
 								<input type="text" id="description_1" class="number_req form-control description" name ="description_1" value="Cabinets"/>
 							</div>	
 						</div>
 						
-						<div class="col-md-3">
+						<div class="col-md-4">
+							<div class="select_field main_units">
 							
-							<label>
-								&nbsp;
-							</label>
+								<select id="main_unit" name ="main_unit" class="main_unit_dropdown" required="required">
+									<option name="" value="">Please Select Vendor</option>
+									<option name="Adornus" value="0.34" data-upcharge="215" data-surcharge="1"> Adornus </option>
+									<option name="Bernier" value="0.51" data-upcharge="210" data-surcharge="1"> Bernier Cabinet </option>
+									<option name="Luxor" value="0.382" data-upcharge="210" data-surcharge="1"> Luxor Cabinetry </option>
+									<option name="CNC" value="0.25" data-upcharge="215" data-surcharge="1" > CNC Cabinetry </option>
+									<option name="CNG" value="0.34" data-upcharge="215" data-surcharge="1"> CNG Cabinets </option>
+									<option name="cubitac" value="0.2688" data-upcharge="215" data-surcharge="1"> Cubitac Cabinet </option>
+									<option name="cubitac_basic" value="0.2592" data-upcharge="215" data-surcharge="1"> Cubitac Basic </option>
+									<option name="DC" value="0.476" data-upcharge="210" data-surcharge="1.009"> DC Cabinetry </option>
+									<option name="Executive" value="0.552" data-upcharge="210" data-surcharge="1.009"> Executive Cabinets </option>
+									<option name="Fabuwood" value="0.349" data-upcharge="215" data-surcharge="1"> Fabuwood </option>														
+									<option name="HansKrug" value="1.0" data-upcharge="210" data-surcharge="1"> Hans Krug </option>
+									<option name="TeddWood_lm_ll" value="0.552" data-upcharge="210" data-surcharge="1.009"> TeddWood  (LM & LL) </option>
+									<option name="TeddWood_custom" value="0.459" data-upcharge="210" data-surcharge="1.009"> TeddWood  (Custom) </option>
+									<option name="Cuisine_ideale" value="0.4" data-upcharge="210" data-surcharge="1"> Cuisine Ideale </option>
+
+								</select>
+							</div>
+						</div>
+						
+						
+						
+						
+						<div class="col-md-2">
+							
+							<div class="input_field_n_dollar">
+								<span class="dollar_sign"> $ </span>
+								<input type="text" id="list_price_1" class="number_req form-control list_price" name ="list_price_1" value="" required="required"/>
+							</div>	
+						</div>
+						
+						<div class="col-md-2">
+							
+							
 							<div class="flex_subdiv">
-								<label class="btn btn-secondary btn_l_c" for="option1" >
-									<input type="radio" class="btn-check list_price_option" name="list_price_options" autocomplete="off" value="L" required="required"/>
-									L
+								<label class="btn btn-secondary btn_l_c active" for="option1" >
+									<input type="radio" class="btn-check list_price_option" name="list_price_options" autocomplete="off" value="L" required="required" checked="checked"/>
+									LIST
 								</label>
+								<!--
 								<label class="btn btn-secondary btn_l_c disabled active" for="option0" onclick="">
 									<input type="radio" class="btn-check list_price_option neutral" name="list_price_options0" autocomplete="off" value="0" disabled="disabled" checked="checked"/>
 								</label>
+								-->
 							   <label class="btn btn-secondary btn_l_c " for="option2">
 									<input type="radio" class="btn-check list_price_option" name="list_price_options" autocomplete="off" value="C" required="required" />
-									C
+									COST
 								</label>
 
 							
 							</div>
 							
 						</div>
-						
-						
-						<div class="col-md-3">
-							<label>
-								Price<span class="red"> * </span>
-							</label>
-							<div class="input_field_n_dollar">
-								<span class="dollar_sign"> $ </span>
-								<input type="text" id="list_price_1" class="number_req form-control list_price" name ="list_price_1" value="" required="required"/>
-							</div>	
-						</div>
-						<div class="col-md-3 modification">
-							<label>
-								Modification
-							</label>
-							<div class="input_field_n_dollar">
-								<span class="dollar_sign"> $ </span>
-								<input type="text" id="list_price_m1" class="number_req form-control list_price_m" name ="list_price_m1" value=""/>
-							</div>	
-						</div>
-						<div class="col-md-1"><label>&nbsp;</label><button type="button" class="plus"> + </button></div>
+						<div class="col-md-1 plus_minus_div"><button type="button" class="plus" id="plus_prices"> + </button></div>
 					</div>
 				</div>
-				
-				
-				<div id="speciality_items">
-					<div class="row input_field speciality_item_fields">
-						<div class="col-md-5">
-							<label>
-								Speciality Items (Cost)
-							</label>
+				<br/>
+				<div class="col-sm-12 no_padding clickable_heading" id="specialities_heading_div">
+					<h2 class="text-left inline_block text_upper">Special Items</h2>
+				</div>
+				<div id="speciality_items" class="toggle_list">
+					<div class="row input_field speciality_item_fields flex_row">
+						<div class="col-md-3 flex_row just_start">
 							<div class="input_field_n_dollar">
-								<input type="text" id="speciality_item_1" class="number_req form-control speciality_item" name ="speciality_item_1" value="Cabinets"/>
+								<input type="text" id="speciality_item_1" class="number_req form-control speciality_item description" name ="speciality_item_1" value="Cabinets"/>
 							</div>	
 						</div>
-						<div class="col-md-3">
-							<label>
-								Price<span class="red"> * </span>
-							</label>
+						<div class="col-md-4">
+							<!--<label class="flex_row">
+								Price
+							</label>-->
 							<div class="input_field_n_dollar">
 								<span class="dollar_sign"> $ </span>
-								<input type="text" id="speciality_item_1" class="number_req form-control speciality_item_price" name ="speciality_item_price_1" value=""/>
+								<input type="text" id="speciality_item_1" class="number_req form-control speciality_item_price" name ="speciality_item_price_1" value="" placeholder="Price"/>
 							</div>	
 						</div>
-						<div class="col-md-1"><label>&nbsp;</label><button type="button" class="btn_plus speciality_item_plus"> + </button></div>
+						<div class="select_field col-md-4 speciality_main_units">
+							
+							<select class="speciality_markup_select" name ="speciality_markup_select" id="speciality_markup_select">
+								<option name="" value=""> Upcharge </option>
+								<option name="" value="1.5"> 50% </option>
+								<option name="" value="1.6"> 60% </option>
+								<option name="" value="1.7"> 70% </option>
+								<option name="" value="1.8"> 80% </option>
+								<option name="" value="1.9"> 90% </option>
+								<option name="" value="2.0" > 100% </option>
+								<option name="" value="2.15" selected> 115% </option>
+							</select>								
+						</div>
+						<div class="col-md-1 plus_minus_div"><button type="button" class="btn_plus speciality_item_plus"> + </button></div>
 					</div>
 				</div>
-
-				<div id="acessories">
+				<br/>
+				<div class="col-sm-12 no_padding clickable_heading" id="acessories_heading_div">
+					<h2 class="text-left inline_block text_upper">Accessories</h2>
+				</div>
+				<div id="acessories" class="toggle_list">
+					
 					<div class="row input_field acessories_dropdown_fields">
-						<div class="col-md-2">
-							<label>
-								Accessories
-							</label>
+					
+						<div class="col-md-3">
+							
 							<div class="input_field_n_dollar">
-								<input type="number" id="acessories_qty_1" class="number_req form-control acessories_qty" name ="acessories_qty_1" value="1"/>
+								<input type="number" id="acessories_qty_1" class="number_req form-control acessories_qty" name ="acessories_qty_1" value="1" placeholder="Qty"/>
 							</div>	
 						</div>
-						<div class="col-md-9">
-							<label>
-								<span class="red"> &nbsp; </span>
-							</label>
+						<!--
+						<div class="col-md-5">
+							
 							<select id="acessories_dropdown" name ="acessories_dropdown" class="acessories_dropdown_list">
-								<option name="" value="">Please Select Acessory</option>
-								<!--<option name="" value="0.22" data-upcharge="100" data-surcharge=""> Adornus </option>-->
+								<option name="" value="">Please Select Accessory</option>
+								
 								<option name="" value="171.70" data-list-price="401.64" data-cost-price="" data-retail_percent="15" data-model="502.56.842"> Trash Pullout - double 52 qt (champagne) </option>
 								<option name="" value="174.44" data-list-price="408.05" data-cost-price="" data-retail_percent="15" data-model="502.56.942" > Trash Pullout - double 52 qt (grey) </option>
 								<option name="" value="189.36" data-list-price="442.94" data-cost-price="" data-retail_percent="15" data-model="502.56.242"> Trash Pullout - double 52 qt (white) </option>
@@ -224,35 +323,18 @@
 								
 							</select>	
 						</div>
-						<div class="col-md-1"><label>&nbsp;</label><button type="button" class="btn_plus acessories_plus"> + </button></div>
-					</div>
-				</div>
-				
-				
-				<div id="acessories_markup_items">
-					<div class="row input_field acessories_markup_item_fields">
+						-->
 						<div class="col-md-4">
-							<label>
-								Accessories
-							</label>
-							<div class="input_field_n_dollar">
-								<input type="text" id="acessories_markup_item_1" class="number_req form-control acessories_markup_item" name ="acessories_markup_items_1" value="Accessory 1"/>
-							</div>	
-						</div>
-						<div class="col-md-3">
-							<label>
-								Cost
-							</label>
+							
 							<div class="input_field_n_dollar">
 								<span class="dollar_sign"> $ </span>
-								<input type="text" id="acessories_price_item" class="number_req form-control acessories_price_item" name ="acessories_price_item" value=""/>
+								<input type="text" id="acessories_price_item" class="number_req form-control acessories_price_item" name ="acessories_price_item" value="" placeholder="Cost"/>
 							</div>	
 						</div>
 						<div class="select_field col-md-4 acessories_markup_main_units">
-							<label>
-								Upcharge
-							</label>
+							
 							<select class="acessories_markup_select" name ="acessories_markup_select" id="acessories_markup_select">
+								<option name="" value=""> Upcharge </option>
 								<option name="" value="1.5"> 50% </option>
 								<option name="" value="1.6"> 60% </option>
 								<option name="" value="1.7"> 70% </option>
@@ -262,36 +344,13 @@
 								<option name="" value="2.15"> 115% </option>
 							</select>								
 						</div>
-						<div class="col-md-1"><label>&nbsp;</label><button type="button" class="btn_plus acessories_markup_plus"> + </button></div>
+						<div class="col-md-1 plus_minus_div"><button type="button" class="btn_plus acessories_plus"> + </button></div>
 					</div>
 				</div>
 				
-				<div class="row input_field">
-					<div class="col-md-6">
-						<label>
-							Shipping
-						</label>
-						<div class="input_field_n_dollar">
-							<span class="dollar_sign"> $ </span>
-							<input type="text" id="shipping" class="number_req form-control" name ="shipping" value=""/>
-						</div>	
-					</div>
-					
-					<div class="select_field col-md-6 main_units">
-						<label>
-							Client Scale
-						</label>
-						<select id="discount" name ="discount">
-							<option name="" value="0">0</option>
-							<option name="" value="5"> 1 </option>
-							<option name="" value="10"> 2 </option>
-							<option name="" value="15"> 3 </option>
-							<option name="" value="20"> 4 </option>
-							<option name="" value="25"> 5 </option>
-						</select>								
-					</div>
+
 				
-				</div>
+				
 				
 				<div class="row input_field">
 					<div class="col-md-12">
@@ -320,47 +379,53 @@
 					<tr class="retail">
 						<td scope="row" class="thead-dark text-center">Total Retail Price</td>
 						<td id="clientPrice" class="text-center"> - </td>
+						<td id="cmd_td"> 
+							<button id="cmd" type="button" class="btn btn-primary">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
+								  <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"></path>
+								  <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1"></path>
+								</svg>
+						
+							</button> 
+						</td>
 					</tr>
 					<br/>
-					<tr >
-						<td colspan="2"><input type="button" id="cmd" type="button" class="btn btn-primary" value="Print"></td>
-					</tr>
+					
 					
 					
 			</table>	
 		</div>
 	</div>
 	
-	
 	<div id="editor">
 	
 		<style> 
 			#editor{
-				padding:20px;
-				max-width:600px;
-				margin:10px auto 20px;
+				padding:5px;
+				max-width:720px;
+				margin:10px auto 10px;
 			}
 			#logo_print{
 				max-width:60px;
 				display:inline-block;
-				margin-top: 20px;
+				margin-top: 10px;
 			}
 			#serial_num{
 				font-size:16px;
 				vertical-align:middle;
 				display:inline-block;
-				padding-top:20px;
+				padding-top:10px;
 			}
 			#editor h2{
 				text-align:center;
 				font-size:24px;
 				border-top:2px solid #000;
 				border-bottom:2px solid #000;
-				padding:10px 0;
-				margin:10px 0;
+				padding:5px 0;
+				margin:5px 0;
 			}
 			#editor ul li{
-				padding:12px 10px;
+				padding:5px 5px;
 				font-size:16px;
 			}
 			#editor .text-bold{
@@ -380,13 +445,13 @@
 				border-collapse: collapse;  
 				width: 100%;  
 				border:2px solid #000;
-				margin:10px 10px;
+				margin:5px 5px;
 			}  
 	  
 			#editor td, #editor th {  
 				border: 1px solid #dddddd;  
 				text-align: left;  
-				padding: 12px;  
+				padding: 5px;  
 				font-size:16px;
 				vertical-align:middle;
 			}  
@@ -407,8 +472,18 @@
 				text-align:center;
 			}
 			.table_print_pdf{
-				margin:15px 10px;
+				margin:15px 5px;
 				border: 1px solid #dddddd;
+			}
+			.pdf_font_small{
+				font-size:10px !important;
+				word-break: break-all;
+				overflow-wrap: break-word;
+			}
+			
+			.pdf_width_small{
+				max-width:22px !important;
+				padding:1px;
 			}
 		</style> 
 		
