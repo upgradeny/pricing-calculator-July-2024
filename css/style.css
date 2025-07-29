@@ -1,5 +1,20 @@
 
 /*--===== General Style =====--*/
+
+@font-face {
+  font-family: 'Ysabeau-VariableFont_wght'; 
+  src: url('../fonts/Ysabeau-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+body{
+	background:#e6e6e6;
+	color:#231f20;
+	font-family: 'Ysabeau-VariableFont_wght' , 'Mont', sans-serif;
+	font-size:16px;
+}
+
 body{
 	background:#eeeeef;
 	color:#000;
@@ -15,25 +30,26 @@ body{
 	text-align: center;
 }
 .price_container{
-	max-width:640px;
+	max-width:760px;
 	margin:0 auto;
 }
 p,span,a,label,li, input::placeholder{
 	color:#000;
 }
 .input_field{
-	padding:15px 0;
+	padding:3px 0;
 }
 input,select{
-    padding: 12px;
+    padding: 5px;
 	border-radius:5px;
 	height: auto;
 	max-width:100%;
 	border-radius:0;
+	border: 1px solid #ced4da;
 }
 input.form-control, select.form-control{
 	height: auto;
-    padding: 12px;
+    padding: 5px;
 	color:#231f20;
 	
 }
@@ -44,16 +60,46 @@ input.form-control, select.form-control{
 h1{
 	color:#231f20;
 }
-
-label {
-    display: inline-block;
-    margin-bottom: .5rem;
-	font-weight:bold;
-    text-align: left;
-	font-size:18px;
+h1,h2{
+	font-family: 'Bebas Neue' !important;
+	letter-spacing :1px;
 	
 }
+h2{
+	color: #ee1c25 !important;
+}
+label {
+    display: inline-block;
+    /*margin-bottom: .5rem;*/
+	margin-bottom: 0;
+	font-weight:bold;
+    text-align: left;
+	font-size:16px;
+	
+}
+.no_padding{
+	padding:0;
+}
+.no_padding_r{
+	padding-right:0;
+}
 
+.taxable_div{
+	justify-content: space-between;
+}
+.justify_space_btw{
+	justify-content: space-between;
+}
+
+.just_start{
+	justify-content: start;
+}
+.gap_10{
+	gap:10px;
+}
+.gap_20{
+	gap:20px;
+}
 .error {
     clear: both;
     display: block;
@@ -100,7 +146,15 @@ th.thead-dark {
 	text-align:left;
 }
 /*-- specific styles --*/
-
+.plus_minus_div{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	flex-direction: column;
+}
+.plus_minus_div label{
+	margin:0;
+}
 
 div#container_rows {
     padding-top: 20px;
@@ -110,14 +164,14 @@ h1{
 	margin: 10px auto;
 }
 h1::after {
-    text-align: center;
     content: ' ';
-    margin: 12px auto 0;
+    margin: 12px 0 25px 22%;
     width: 50px;
     display: block;
     height: 2px;
     border-bottom: 2px solid #eb2227;
 }
+/*
 h2{
 	text-align:center;
 	font-size:18px;
@@ -125,8 +179,27 @@ h2{
 	border-bottom:2px solid #eb2227;
 	padding:10px 0;
 }
+*/
+h2 {
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 1px;
+    padding: 0;
+    font-weight: bold;
+    color: #ee1c25;
+}
+.clickable_heading{
+	cursor:pointer;
+	
+}
+.toggle_list{
+	display:none;
+}
+#cabinet_info_heading_div , .clickable_heading {
+	margin-top:10px;
+}
 form{
-	padding:15px 0 25px;
+	padding:0 0 25px;
 	margin: 0 auto;
 	width:100%;
 }
@@ -138,7 +211,11 @@ form{
 	padding: 7px 0;
 	*/
 }
-
+.row_headings label , .row_headings div{
+	
+	margin-bottom:0;
+	padding-bottom:0;
+}
 .form-control:disabled, .form-control[readonly] {
     background-color: #a83334;
     opacity: 1;
@@ -169,7 +246,7 @@ select, #cmd{
 }
 .dollar_sign {
     position: absolute;
-	padding: 0 15px;
+	padding: 4px 10px;
 	/*
 	color: #fff;
     float: right;
@@ -189,11 +266,11 @@ select, #cmd{
 	color:#231f20;
 }
 .input_field_n_dollar input.description {
-	padding-left:15px;
+	padding-left:10px;
 }
 .input_field_n_dollar input.form-control,.input_field_n_dollar select.form-control,.input_field_n_dollar .dollar_sign{
-	height: 45px;
-	line-height: 45px;
+	/*height: 45px;
+	line-height: 45px;*/
 	border-radius:0;
 }
 .btn.btn-primary{
@@ -211,26 +288,54 @@ select, #cmd{
 #price_calc_btn{
 	width:100%;
 }
-#cmd{
-	background:#eb2227;
+
+.flex_row{
+	display:flex;
 }
-#cmd:hover{
-	background:#eeeeef;
-	color:#000;
+.project_info{
+	display:flex;
+	flex-direction:column;
+	gap:10px;
+}
+.project_info .flex_row{
+	gap:10px;
+	align-items: center;
+}
+.project_info label{
+	flex-basis:48%;
+}
+.project_info .flex_row div{
+	flex:1;
 }
 .btn_plus,.btn_minus,.plus,.minus {
-    border: 0;
+    
     background: #231f20;
     color: #fff;
-    font-size: 24px;
+   
     box-sizing: border-box;
     font-weight: bold;
-    height: 45px;
+    /*
+	border: 0;
+	font-size: 24px;
+	line-height:32px;
+	height: 45px;
     line-height: 45px;
-    border-radius: 0;
-    padding: 0 12px;
-    cursor: pointer;
+	padding: 0 10px;
 	width: 40px;
+	*/
+	border:0;
+	font-size: 22px;
+    line-height: 22px;
+    border-radius: 0;
+    cursor: pointer;
+	font-weight: bold;
+    font-family: serif;
+	border-radius: 100%;
+	width: 32px;
+    height: 32px;
+}
+.btn_minus , .minus {
+	font-size:26px;
 }
 .plus:hover,.btn_plus:hover{
 	background: #eb2227;
@@ -291,7 +396,8 @@ button, input, optgroup, select, textarea {
 	color:#fff;
 	border:0;
 	border-radius:0;
-	min-width:40px;
+	/*min-width:40px;*/
+	padding: 6px 7px;
 	cursor:pointer;
 }
 .btn_l_c.active, .taxation_btn_l_c.active{
@@ -303,3 +409,44 @@ button, input, optgroup, select, textarea {
 	padding:5px 10px;
 	
 }
+#cmd svg {
+    width: auto;
+    height: 24px;
+}
+#resultsTable{
+	min-width:auto;
+}
+/*
+#cmd{
+	background:#eb2227;
+}
+#resultsTable .retail td#cmd_td:hover{
+	background:#000;
+	color:#fff;
+}
+#resultsTable .retail td#cmd_td:hover #cmd{
+	background:#000;
+	color:#fff;
+}
+*/
+
+#resultsTable .retail td#cmd_td
+{
+	padding: 0 10px;
+    margin: 0;
+    vertical-align: middle;
+    background: #ececec;
+}
+#cmd
+{
+    background: #ececec;
+    width: auto;
+    font-size: 18px;
+    display: inline-block;
+    padding: 5px;
+    color: #676161;
+}
+#cmd:hover{
+	color:#000;
+}
+
