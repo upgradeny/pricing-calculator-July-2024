@@ -429,10 +429,10 @@ $(document).ready(function(){
 				
 				let print_project_info = '<table id="input_data_table_2" class="table_print_pdf"> ' + 
 										'<tr><td class=""> Floor Plan # ' + floor_plan +  ' </td> ' + 
-										'<td> Shipping : $' + numberWithCommas(shipping) + ' </td>' +
+										'<td> Shipping: $' + numberWithCommas(shipping) + ' </td>' +
 										'</tr>' + 
-										'<tr><td class=""> Name : ' + name +  ' </td>'+
-										'<td> Client Scale : ' + $('#discount option:selected').text() + ' </td>' + 
+										'<tr><td class=""> Name: ' + name +  ' </td>'+
+										'<td> Client Scale: ' + $('#discount option:selected').text() + ' </td>' + 
 										'</tr>' +  
 										'</table><div class="br_line"><br/></div>';
 				
@@ -442,10 +442,10 @@ $(document).ready(function(){
 												'<td>Retail</td>' +
 												'<td>List</td>' +
 												'<td>Cost</td>' +
-												'<td class="pdf_font_small pdf_width_small">Vendor</td>' +
-												'<td class="pdf_font_small pdf_width_small">Upcharge</td>' +
-												'<td class="pdf_font_small pdf_width_small">Multiplier</td>' +
-												'<td class="pdf_font_small pdf_width_small">Surcharge</td>' +
+												'<td class="">Vendor</td>' +
+												'<td class="">UC</td>' +
+												'<td class="">MP</td>' +
+												
 											'</tr>';
 											
 				//let print_input_data = '<table id="input_data_table_4" class="table_print_pdf">';
@@ -480,7 +480,7 @@ $(document).ready(function(){
 				//	console.log(listprice);
 					if( opt_l_c == "L" ){
 						listprice = listprice + price;
-						var LP_check = '$ ' + numberWithCommas( Number( $(this).val() ) );
+						var LP_check = '$' + numberWithCommas( Number( $(this).val() ) );
 						
 					}else{
 						var LP_check = "N/A";
@@ -502,10 +502,10 @@ $(document).ready(function(){
 												'<td> $' + numberWithCommas( round_2_digits( Number( price_func_arr[1] ) - Number( price_func_arr[1] ) * discount + shipping_part + modificationprice ) ) + ' </td>' +
 												'<td> ' + LP_check + ' </td>' +
 												'<td> $' + numberWithCommas( round_2_digits(price + shipping_part + modificationprice) ) + ' </td>' +
-												'<td class="pdf_font_small pdf_width_small"> ' + list_price_element.find('.main_unit_dropdown option:selected').text() + ' </td>' +
-												'<td class="pdf_font_small pdf_width_small"> ' + upCharge + ' </td>' +
-												'<td class="pdf_font_small pdf_width_small"> ' + vendor + ' </td>' +
-												'<td class="pdf_font_small pdf_width_small"> ' + vendorSurcharge + ' </td>' +
+												'<td class=""> ' + list_price_element.find('.main_unit_dropdown option:selected').text() + ' </td>' +
+												'<td class=""> ' + upCharge + ' </td>' +
+												'<td class=""> ' + vendor + ' </td>' +
+												
 											'</tr>';
 					
 					cnt1++;
@@ -529,14 +529,14 @@ $(document).ready(function(){
 						clientPrice += speciality_item_retail_price;
 	
 						print_cost_table_sub +=  '<tr>' + 
-													'<td> Speciality item : ' + speciality_item_element.find('.speciality_item').val()  + ' </td>' +
+													'<td> Speciality item: ' + speciality_item_element.find('.speciality_item').val()  + ' </td>' +
 													'<td> $' + speciality_item_retail_price + ' </td>' +
 													'<td> N/A </td>' +
 													'<td> $' + speciality_item_cost_price + ' </td>' +
-													'<td class="pdf_font_small pdf_width_small"> ' + '  ' + ' </td>' +
-													'<td class="pdf_font_small pdf_width_small"> '  + speciality_item_upcharge + ' </td>' +
-													'<td class="pdf_font_small pdf_width_small"> ' + '  ' + ' </td>' +
-													'<td class="pdf_font_small pdf_width_small"> ' + '  ' + ' </td>' +
+													'<td class=""> ' + '  ' + ' </td>' +
+													'<td class=""> '  + speciality_item_upcharge + ' </td>' +
+													'<td class=""> ' + '  ' + ' </td>' +
+													
 												'</tr>';
 					}
 				});
@@ -573,10 +573,10 @@ $(document).ready(function(){
 													'<td> $' + acessories_item_markup_price + ' </td>' +
 													'<td> N/A </td>' +
 													'<td> $' + acessories_item_cost_price + ' </td>' +
-													'<td class="pdf_font_small pdf_width_small"> '  + ' - ' + ' </td>' +
-													'<td class="pdf_font_small pdf_width_small"> '  + acessories_item_markup_value + ' </td>' +
-													'<td class="pdf_font_small pdf_width_small"> - </td>' +
-													'<td class="pdf_font_small pdf_width_small"> '  + ' - ' + ' </td>' +
+													'<td class=""> '  + ' - ' + ' </td>' +
+													'<td class=""> '  + acessories_item_markup_value + ' </td>' +
+													'<td class=""> - </td>' +
+													
 												'</tr>';
 												
 					}
@@ -776,18 +776,19 @@ $(document).ready(function(){
 				clientPrice = round_2_digits( clientPrice + Number(shipping) + Number ( modificationtotalPrice ) ); // + Number(surcharge);
 				
 				
+				
+									
+				print_cost_table += print_cost_table_sub;
 				print_cost_table += '<tr>' + 
 										'<td class="text-bold"> Total </td>' +
 										'<td class="text-bold"> $' + numberWithCommas( round_2_digits( clientPrice ) ) + ' </td>' +
 										'<td class="text-bold"> $' + numberWithCommas( round_2_digits( listprice ) ) + ' </td>' +
 										'<td class="text-bold"> $' +  numberWithCommas( round_2_digits(totalCost) ) + ' </td>' +
-										'<td class="pdf_font_small pdf_width_small"> ' + '  ' + ' </td>' +
-										'<td class="pdf_font_small pdf_width_small"> ' + '  ' + ' </td>' +
-										'<td class="pdf_font_small pdf_width_small"> ' + '  ' + ' </td>' +
-										'<td class="pdf_font_small pdf_width_small"> ' + '  ' + ' </td>' +
+										'<td class=""> ' + '  ' + ' </td>' +
+										'<td class=""> ' + '  ' + ' </td>' +
+										'<td class=""> ' + '  ' + ' </td>' +
+										
 									'</tr>';
-									
-				print_cost_table += print_cost_table_sub;
 				print_cost_table += '</table><div class="br_line"><br/></div>';				
 				
 				let profit = round_2_digits(clientPrice - totalCost);
@@ -822,14 +823,15 @@ $(document).ready(function(){
 				let html_notes = '<div class="table_print_1">' +
 					'<table id="input_data_table_t_cost"><tr>'+
 										'<td><h3>Notes<h3></td>'+
-					'<td><h3 class="text-right"> Total cost with tax : $' + numberWithCommas( round_2_digits(cost_w_tax) ) + '</h3></td>' +
+					'<td><h3 class="text-right"> Total cost with tax: $' + numberWithCommas( round_2_digits(cost_w_tax) ) + '</h3></td>' +
 					'<tr/></table>'+
-										'<p>' +
+										'<span>' +
 										notes_textarea +
-										'</p>' + 
+										'</span>' + 
 									'</div>';
 					
-				let print_notes =  notes_textarea.length > 0 ? html_notes : '';
+				//let print_notes =  notes_textarea.length > 0 ? html_notes : '';
+				let print_notes =  html_notes;
 				
 				$('#editor').append(print_header);
 				$('#editor').append(print_project_info);
