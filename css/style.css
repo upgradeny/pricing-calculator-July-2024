@@ -145,6 +145,10 @@ th.thead-dark {
 .text-left{
 	text-align:left;
 }
+.pd_lr_15{
+	padding-left:15px!important;
+	padding-right:15px!important;
+}
 /*-- specific styles --*/
 .plus_minus_div{
 	display: flex;
