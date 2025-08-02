@@ -173,13 +173,15 @@ $(document).ready(function(){
 					'<div class="col-md-2">' +
 							
 							'<div class="flex_subdiv">' +
-								'<label class="btn btn-secondary btn_l_c active" for="option1" >' +
-									'<input type="radio" class="btn-check list_price_option" name="list_price_options' + num1  + '" autocomplete="off" value="L" checked="checked" />' +
+								'<label class="btn btn-secondary btn_l_c" for="option1" >' +
+									'<input type="radio" class="btn-check list_price_option" name="list_price_options' + num1  + '" autocomplete="off" value="L" required="required"/>' +
 									'LIST' +
 								'</label>' +
-								
+								'<label class="btn btn-secondary btn_l_c disabled active pd_lr_15" for="option0" onclick="">' +
+									'<input type="radio" class="btn-check list_price_option neutral" name="list_price_options0" autocomplete="off" value="0" disabled="disabled" checked="checked"/>' +
+								'</label>' +
 							   '<label class="btn btn-secondary btn_l_c " for="option2">' +
-									'<input type="radio" class="btn-check list_price_option" name="list_price_options' + num1  + '" autocomplete="off" value="C" />' +
+									'<input type="radio" class="btn-check list_price_option" name="list_price_options' + num1  + '" autocomplete="off" value="C" required="required"/>' +
 									'COST' +
 								'</label>' +
 
