@@ -107,11 +107,13 @@
 							</label>
 							</div>
 							<div class="flex_subdiv col-sm-5 no_padding">
-								<label class="btn btn-secondary taxation_btn_l_c active" for="option1" >
-									<input type="radio" class="btn-check list_price_option" name="taxation_options" autocomplete="off" value="1" required="required" checked="checked"/>
+								<label class="btn btn-secondary taxation_btn_l_c" for="option1" >
+									<input type="radio" class="btn-check list_price_option" name="taxation_options" autocomplete="off" value="1" required="required" />
 									Yes
 								</label>
-								
+								<label class="btn btn-secondary taxation_btn_l_c disabled active" for="option0" onclick="">
+									<input type="radio" class="btn-check list_price_option neutral" name="taxation_options0" autocomplete="off" value="0" disabled="disabled" checked="checked"/>
+								</label>
 							   	<label class="btn btn-secondary taxation_btn_l_c " for="option2">
 									<input type="radio" class="btn-check list_price_option" name="taxation_options" autocomplete="off" value="0" required="required" />
 									NO
@@ -222,15 +224,15 @@
 							
 							
 							<div class="flex_subdiv">
-								<label class="btn btn-secondary btn_l_c active" for="option1" >
-									<input type="radio" class="btn-check list_price_option" name="list_price_options" autocomplete="off" value="L" required="required" checked="checked"/>
+								<label class="btn btn-secondary btn_l_c" for="option1" >
+									<input type="radio" class="btn-check list_price_option" name="list_price_options" autocomplete="off" value="L" required="required"/>
 									LIST
 								</label>
-								<!--
-								<label class="btn btn-secondary btn_l_c disabled active" for="option0" onclick="">
-									<input type="radio" class="btn-check list_price_option neutral" name="list_price_options0" autocomplete="off" value="0" disabled="disabled" checked="checked"/>
+								
+								<label class="btn btn-secondary btn_l_c disabled active pd_lr_15" for="option0" onclick="">
+									<input type="radio" class="btn-check list_price_option neutral " name="list_price_options0" autocomplete="off" value="0" disabled="disabled" checked="checked"/>
 								</label>
-								-->
+								
 							   <label class="btn btn-secondary btn_l_c " for="option2">
 									<input type="radio" class="btn-check list_price_option" name="list_price_options" autocomplete="off" value="C" required="required" />
 									COST
@@ -358,8 +360,7 @@
 					</div>
 					
 					<div class="col-md-12">
-						<textarea id="notes_textarea" name="notes_textarea" rows="4">
-						</textarea>
+						<textarea id="notes_textarea" name="notes_textarea" rows="4"></textarea>
 					</div>
 				
 				</div>
