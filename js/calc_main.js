@@ -445,7 +445,7 @@ $(document).ready(function(){
 												'<td class="">Vendor</td>' +
 												'<td class="">UC</td>' +
 												'<td class="">MP</td>' +
-												
+												'<td class="">SC</td>' +
 											'</tr>';
 											
 				//let print_input_data = '<table id="input_data_table_4" class="table_print_pdf">';
@@ -505,7 +505,7 @@ $(document).ready(function(){
 												'<td class=""> ' + list_price_element.find('.main_unit_dropdown option:selected').text() + ' </td>' +
 												'<td class=""> ' + upCharge + ' </td>' +
 												'<td class=""> ' + vendor + ' </td>' +
-												
+												'<td class=""> ' + vendorSurcharge + ' </td>' +
 											'</tr>';
 					
 					cnt1++;
@@ -536,7 +536,7 @@ $(document).ready(function(){
 													'<td class=""> ' + '  ' + ' </td>' +
 													'<td class=""> '  + speciality_item_upcharge + ' </td>' +
 													'<td class=""> ' + '  ' + ' </td>' +
-													
+													'<td class=""> ' + '  ' + ' </td>' +
 												'</tr>';
 					}
 				});
@@ -576,7 +576,7 @@ $(document).ready(function(){
 													'<td class=""> '  + ' - ' + ' </td>' +
 													'<td class=""> '  + acessories_item_markup_value + ' </td>' +
 													'<td class=""> - </td>' +
-													
+													'<td class=""> - </td>' +
 												'</tr>';
 												
 					}
@@ -787,7 +787,7 @@ $(document).ready(function(){
 										'<td class=""> ' + '  ' + ' </td>' +
 										'<td class=""> ' + '  ' + ' </td>' +
 										'<td class=""> ' + '  ' + ' </td>' +
-										
+										'<td class=""> ' + '  ' + ' </td>' +
 									'</tr>';
 				print_cost_table += '</table><div class="br_line"><br/></div>';				
 				
