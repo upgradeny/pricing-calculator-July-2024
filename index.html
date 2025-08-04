@@ -7,6 +7,7 @@
 	<link href="css/print.min.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
 	<link href="fonts/Ysabeau-VariableFont_wght.ttf" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <!-- Main CSS -->
 	<link rel="stylesheet" href="css/style.css">
 	<style>
@@ -402,9 +403,14 @@
 	
 		<style> 
 			#editor{
-				padding:10px;
+				
 				max-width:640px;
 				margin:10px auto 20px;
+				
+			}
+			#editor , #editor span , #editor p , #editor td , #editor th , #editor h2 , #editor li{
+				font-family:'Montserrat', Arial , Helvetica , Roboto,  Raleway;
+				font-size:16px;
 			}
 			#logo_print{
 				max-width:60px;
@@ -426,7 +432,7 @@
 				margin:10px 0;
 			}
 			#editor ul li{
-				padding:5px 5px;
+				
 				font-size:16px;
 			}
 			#editor .text-bold{
@@ -441,18 +447,21 @@
 			#editor .text-left{
 				text-align:left;
 			}
+			#editor .table_print_1{
+				
+			}
 			#editor table {  
 				font-family: arial, sans-serif;  
 				border-collapse: collapse;  
 				width: 100%;  
-				border:2px solid #000;
-				margin:5px 5px;
+				/*border:2px solid #000;*/
+				
 			}  
 	  
 			#editor td, #editor th {  
-				border: 1px solid #dddddd;  
+				border: 1px solid #000;  
 				text-align: left;  
-				padding: 5px;  
+				padding: 4px;  
 				font-size:16px;
 				vertical-align:middle;
 			}  
@@ -472,10 +481,7 @@
 				font-weight:bold;
 				text-align:center;
 			}
-			.table_print_pdf{
-				margin:15px 5px;
-				border: 1px solid #dddddd;
-			}
+			
 			.pdf_font_small{
 				font-size:10px !important;
 				word-break: break-all;
