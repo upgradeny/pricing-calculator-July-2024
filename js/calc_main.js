@@ -443,9 +443,9 @@ $(document).ready(function(){
 												'<td>List</td>' +
 												'<td>Cost</td>' +
 												'<td class="">Vendor</td>' +
-												'<td class="">UC</td>' +
-												'<td class="">MP</td>' +
-												'<td class="">SC</td>' +
+												'<td class="pdf_width_small">UC</td>' +
+												'<td class="pdf_width_small">MP</td>' +
+												'<td class="pdf_width_small">SC</td>' +
 											'</tr>';
 											
 				//let print_input_data = '<table id="input_data_table_4" class="table_print_pdf">';
@@ -503,9 +503,9 @@ $(document).ready(function(){
 												'<td> ' + LP_check + ' </td>' +
 												'<td> $' + numberWithCommas( round_2_digits(price + shipping_part + modificationprice) ) + ' </td>' +
 												'<td class=""> ' + list_price_element.find('.main_unit_dropdown option:selected').text() + ' </td>' +
-												'<td class=""> ' + upCharge + ' </td>' +
-												'<td class=""> ' + vendor + ' </td>' +
-												'<td class=""> ' + vendorSurcharge + ' </td>' +
+												'<td class="pdf_width_small"> ' + upCharge + ' </td>' +
+												'<td class="pdf_width_small"> ' + vendor + ' </td>' +
+												'<td class="pdf_width_small"> ' + vendorSurcharge + ' </td>' +
 											'</tr>';
 					
 					cnt1++;
@@ -534,9 +534,9 @@ $(document).ready(function(){
 													'<td> N/A </td>' +
 													'<td> $' + speciality_item_cost_price + ' </td>' +
 													'<td class=""> ' + '  ' + ' </td>' +
-													'<td class=""> '  + speciality_item_upcharge + ' </td>' +
-													'<td class=""> ' + '  ' + ' </td>' +
-													'<td class=""> ' + '  ' + ' </td>' +
+													'<td class="pdf_width_small"> '  + speciality_item_upcharge + ' </td>' +
+													'<td class="pdf_width_small"> ' + '  ' + ' </td>' +
+													'<td class="pdf_width_small"> ' + '  ' + ' </td>' +
 												'</tr>';
 					}
 				});
@@ -574,9 +574,9 @@ $(document).ready(function(){
 													'<td> N/A </td>' +
 													'<td> $' + acessories_item_cost_price + ' </td>' +
 													'<td class=""> '  + ' - ' + ' </td>' +
-													'<td class=""> '  + acessories_item_markup_value + ' </td>' +
-													'<td class=""> - </td>' +
-													'<td class=""> - </td>' +
+													'<td class="pdf_width_small"> '  + acessories_item_markup_value + ' </td>' +
+													'<td class="pdf_width_small"> - </td>' +
+													'<td class="pdf_width_small"> - </td>' +
 												'</tr>';
 												
 					}
@@ -785,9 +785,9 @@ $(document).ready(function(){
 										'<td class="text-bold"> $' + numberWithCommas( round_2_digits( listprice ) ) + ' </td>' +
 										'<td class="text-bold"> $' +  numberWithCommas( round_2_digits(totalCost) ) + ' </td>' +
 										'<td class=""> ' + '  ' + ' </td>' +
-										'<td class=""> ' + '  ' + ' </td>' +
-										'<td class=""> ' + '  ' + ' </td>' +
-										'<td class=""> ' + '  ' + ' </td>' +
+										'<td class="pdf_width_small"> ' + '  ' + ' </td>' +
+										'<td class="pdf_width_small"> ' + '  ' + ' </td>' +
+										'<td class="pdf_width_small"> ' + '  ' + ' </td>' +
 									'</tr>';
 				print_cost_table += '</table><div class="br_line"><br/></div>';				
 				
