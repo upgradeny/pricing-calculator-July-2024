@@ -408,7 +408,7 @@ button, input, optgroup, select, textarea {
 	background: #eb2227 !important;
 }
 .taxation_btn_l_c.disabled{
-	width:36px!important;
+	flex-basis:36px ;
 }
 #notes_textarea{
 	width:100%;
@@ -456,5 +456,6 @@ button, input, optgroup, select, textarea {
 #cmd:hover{
 	color:#000;
 }
+
 
 
