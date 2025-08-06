@@ -439,13 +439,13 @@ $(document).ready(function(){
 				let print_cost_table = '<table id="input_data_table_3" class="table_print_pdf"> ' + 
 											'<tr>' + 
 												'<td> </td>' +
-												'<td>Retail</td>' +
-												'<td>List</td>' +
-												'<td>Cost</td>' +
-												'<td class="">Vendor</td>' +
-												'<td class="pdf_width_small">UC</td>' +
-												'<td class="pdf_width_small">MP</td>' +
-												'<td class="pdf_width_small">SC</td>' +
+												'<td class="pdf_font_16">Retail</td>' +
+												'<td class="pdf_font_16">List</td>' +
+												'<td class="pdf_font_16">Cost</td>' +
+												'<td class="pdf_font_16">Vendor</td>' +
+												'<td class="pdf_width_small pdf_font_16">UC</td>' +
+												'<td class="pdf_width_small pdf_font_16">MP</td>' +
+												'<td class="pdf_width_small pdf_font_16">SC</td>' +
 											'</tr>';
 											
 				//let print_input_data = '<table id="input_data_table_4" class="table_print_pdf">';
@@ -780,10 +780,10 @@ $(document).ready(function(){
 									
 				print_cost_table += print_cost_table_sub;
 				print_cost_table += '<tr>' + 
-										'<td class="text-bold"> Total </td>' +
-										'<td class="text-bold"> $' + numberWithCommas( round_2_digits( clientPrice ) ) + ' </td>' +
-										'<td class="text-bold"> $' + numberWithCommas( round_2_digits( listprice ) ) + ' </td>' +
-										'<td class="text-bold"> $' +  numberWithCommas( round_2_digits(totalCost) ) + ' </td>' +
+										'<td class="text-bold pdf_font_16"> Total </td>' +
+										'<td class="text-bold pdf_font_16"> $' + numberWithCommas( round_2_digits( clientPrice ) ) + ' </td>' +
+										'<td class="text-bold pdf_font_16"> $' + numberWithCommas( round_2_digits( listprice ) ) + ' </td>' +
+										'<td class="text-bold pdf_font_16"> $' +  numberWithCommas( round_2_digits(totalCost) ) + ' </td>' +
 										'<td class=""> ' + '  ' + ' </td>' +
 										'<td class="pdf_width_small"> ' + '  ' + ' </td>' +
 										'<td class="pdf_width_small"> ' + '  ' + ' </td>' +
@@ -899,4 +899,5 @@ $(document).ready(function(){
 			});	
 			
 });
+
 
