@@ -428,11 +428,11 @@ $(document).ready(function(){
 				// saving pdf html in variables , which will later be appended in html for pdf print
 				
 				let print_project_info = '<table id="input_data_table_2" class="table_print_pdf"> ' + 
-										'<tr><td class=""> Floor Plan # ' + floor_plan +  ' </td> ' + 
-										'<td> Shipping: $' + numberWithCommas(shipping) + ' </td>' +
+										'<tr><td class="pdf_font_16"> Floor Plan # ' + floor_plan +  ' </td> ' + 
+										'<td class="pdf_font_16"> Shipping: $' + numberWithCommas(shipping) + ' </td>' +
 										'</tr>' + 
-										'<tr><td class=""> Name: ' + name +  ' </td>'+
-										'<td> Client Scale: ' + $('#discount option:selected').text() + ' </td>' + 
+										'<tr><td class="pdf_font_16"> Name: ' + name +  ' </td>'+
+										'<td class="pdf_font_16"> Client Scale: ' + $('#discount option:selected').text() + ' </td>' + 
 										'</tr>' +  
 										'</table><div class="br_line"><br/></div>';
 				
@@ -899,3 +899,4 @@ $(document).ready(function(){
 			});	
 			
 });
+
